@@ -6,7 +6,7 @@ class QuickSort
   def self.sort1(array)
     return array if array.length == 0
 
-    pivot = rand(1..array.length-1)
+    pivot = array[0]
     left = array[1..-1].select { |el| el < pivot }
     right = array[1..-1].select { |el| el >= pivot }
 
