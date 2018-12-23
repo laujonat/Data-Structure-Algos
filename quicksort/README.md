@@ -1,5 +1,6 @@
 ## Quicksort In-place
+https://stackoverflow.com/questions/22028117/is-quicksort-in-place-or-not
 
-Refer to the videos for instructions on how to implement this method.
-
-This project is shorter than most. It is **HIGHLY** recommended that you use your extra time to begin fixing your resumes, FSPs, and JS projects; applications start on Monday!!!
+```
+QuickSort as in-place - it sorts the elements within the array with at most a constant amount of them outside the array at any given time.
+```
