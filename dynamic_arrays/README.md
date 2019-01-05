@@ -109,15 +109,3 @@ end
 
 ```
 
-The `each` loop runs *n* times, where `arr.length` is *n*.  That means that our block runs *n* times, so the time complexity of `myInject` depends on the time complexity of `block`.  In particular, `O(myInject) = O(n)*O(block)`.  For example, suppose that we find ourselves in a situation where `block` runs in constant time, the simplest possible case; perhaps `block = { |a, b| a + b }`.  Then `O(myInject) = O(n)*O(1) = O(n)`.  
-
-Things can get more complicated, though.  Suppose that we run `myInject` on an array of arrays, and that `block = { |a, b| b.each do |el| { a << el } }`.  Now, `O(block.call(a, b)) = O(b.length)`, so if each *element* of our original array is itself an array of, say, size *k*, then `O(myInject) = O(n)*O(k) = O(nk)`.  
-
-To make things even more complicated, suppose that each element of our original array is an array whose size is equal to its index.  Then instead of simply multiplying `O(n)*O(block)`, we must *add* the time complexities of each run through our inner loop, i.e., `O(myInject) = O(0) + O(1) + O(2) + ... + O(n - 1) = O(n)*(O(0) + O(1) + ... + O(n - 1)) = O(n(n - 1)/2) = O(n^2)`.  
-
-Don't forget to evaluate time complexity as part of the project you'll be doing shortly!  
-
-## Your Turn
-
-Now that you know how arrays work in a variety of languages, it's time to do some implementation.  Phase 1 will have you implement a dynamic array using a static array.  In Phase 2, you'll use your new data structure to implement some of the basic array functionality as well as coding up some answers to common interview questions on arrays.
-
