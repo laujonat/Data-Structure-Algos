@@ -1,8 +1,5 @@
 # MyHashMap
 
-Today you will implement your very own HashMap. If this sounds tricky,
-don't worry--we've provided specs.
-
 ## Learning Goals
 
 * Be able to write a resizing array class
