@@ -2,14 +2,11 @@
 
 ### Vertex and Edge
 
-Start off by writing the Vertex and Edge Classes. The Vertex Class should take in an value and store in_edges and out_edges. The Edge Class should take in a from_vertex, a to_vertex, and a cost if it is weighted. It should add itself to the from_vertex and to_vertex's in and out edges respectively (accessor methods!). Its destroy method should remove it from the in and out edges and sets its from and to vertices to nil. Once you have the specs passing, move on to topological sort.
+Vertex and Edge Classes. The Vertex Class should take in an value and store in_edges and out_edges. The Edge Class should take in a from_vertex, a to_vertex, and a cost if it is weighted. It should add itself to the from_vertex and to_vertex's in and out edges respectively (accessor methods!). Its destroy method should remove it from the in and out edges and sets its from and to vertices to nil. Once you have the specs passing, move on to topological sort.
 
 What you've created is an Adjacency List representation of a Graph.
 
 ### Kahn's Algorithm
-
-Let's first write topological sort using Kahn's Algorithm.
-
 The idea of Kahn’s algorithm is to repeatedly remove nodes that have zero in-degree. The steps are as follows:
 
 * Determine the in-degree of each node.
@@ -28,7 +25,7 @@ What is the time complexity of this algorithm? Make sure to analyze time complex
 
 ### Tarjan's Algorithm
 
-Next, implement topological sort using Tarjan's Algorithm.
+Tarjan's Algorithm.
 
 An alternative algorithm for topological sorting is based on depth-first search. The algorithm loops through each node of the graph, in an arbitrary order, initiating a depth-first search that terminates when it hits any node that has already been visited since the beginning of the topological sort or the node has no outgoing edges (i.e. a leaf node):
 
