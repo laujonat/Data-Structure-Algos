@@ -1,9 +1,5 @@
 # Binary Search Trees
 
-# Phase 1: Building a BST
-
-In this project, we'll translate our conceptual idea of a binary search tree into a real, live Ruby object with all the functionality that we dreamt of.  
-
 ## `BSTNode`
 
 This class will be pretty simple. We need only an `#initialize` method and the appropriate `attr_accessor`s. Set these up in the BST class and make sure those specs pass.
