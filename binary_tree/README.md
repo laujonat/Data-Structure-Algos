@@ -1,20 +1,8 @@
 # Binary Search Trees
 
-
 # Phase 1: Building a BST
 
 In this project, we'll translate our conceptual idea of a binary search tree into a real, live Ruby object with all the functionality that we dreamt of.  
-
-## The Setup
-
-First, we must consider carefully how we'd like to represent our BST and the nodes within it. There is not a single "right" way to do this, but there are some time complexities and functionality that we *must* achieve, namely:
-
-- **Nodes**: allows each node to hold a value, `val`, and accesses and sets that `val` in constant time,
-- **Child/parent connections**: allows each node to hold a left child and/or a right child, with access to the children in constant time
-
-Notice that we don't necessarily *need* to represent a node's `parent` connection explicitly; however, that might be a useful attribute to track should we ever need it.  
-
-It'll be helpful to separate our concerns into two structures: `BSTNode` and `BinarySearchTree`.  Each `BSTNode` will hold the information relevant to an individual node: its value and pointers to its children. It's up to you whether or not you want to include the parent pointer, but do know that it could determine how your methods are later written in the `BinarySearchTree` class. The `BinarySearchTree` will house a collection of nodes tied together using the conceptual rules of the BST outlined in the videos and readings.  
 
 ## `BSTNode`
 
@@ -35,8 +23,6 @@ Also, in the skeleton file for the `BinarySearchTree` class, there are method ar
 Let's review how we conceptually created a binary search tree: we began with a root. Instantiate this within `#initialize`, and don't forget its accessor. Remember that the root is a node, but let's start it off equal to `nil`, and when we eventually insert the first element, then we'll set it to equal a node.
 
 #### `#insert`
-
-Recall our algorithm for inserting a node into a tree:
 
 1. Compare the node's value to the root's value.
 2. If the node is less than the root, insert into the left subtree. If there is no left subtree, the node becomes the root's left child.
@@ -68,7 +54,6 @@ Remember that a lynch pin in our binary search tree was ensuring that the tree w
 
 <img src="https://github.com/appacademy/sf-job-search-curriculum/blob/master/algorithms/binary_search_trees/diagrams/degnerate.png" />
 
-We defined the *balanced* property as follows:
 
 1. The depths of the left and right subtrees differ by at most 1,
 2. Both the left and right subtrees are also balanced.
@@ -84,19 +69,3 @@ As our final Phase 1 exercise, let's implement `#in_order_traversal`, which retu
 3. Perform an in-order traversal of the right subtree.
 
 Your `#in_order_traversal` method should return an array that contains the data set underlying the BST, in sorted order.
-
-## What Our Tree Is and Isn't
-
-Great job! You've built a basic BST. This structure has all the features of a binary search tree, but it's important to know what this tree isn't: it is *not* a self-balancing tree. That's important, because we have no safeguard to ensure that our time complexities remain logarithmic for `#find`, `#insert`, and `#delete`. After phase 2, as a bonus, you can try to create a self-balancing tree and implement the rebalacing algorithm.
-
-Before you explore the world of AVL/self-balancing trees, go on to use your tree for some interview-style questions. It's more important that you do Phase 2 than the bonus, because phase 2 is similar to the kinds of exercises you may be expected to do on an actual interview. (No a/A student has ever been asked to implement a rebalancing algorithm or an AVL tree from scratch.  No one.)
-
-Sally forth! Phase 2 awaits!  
-
-## Phase 2: Binary Search Trees in Action
-
-In this part of the lesson, let's do an interview problem that involves a BST.
-
-#### `kth_largest`
-
-In the file, `bst_practical.rb`, write a function that takes in a binary search tree (as a `tree_node`) and an integer *k*, and returns the <i>k</i>th largest element in the BST.
