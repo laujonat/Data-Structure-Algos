@@ -3,8 +3,6 @@
 
 ## C vs. Ruby  
 
-You're likely most comfortable programming in Ruby.  That's by design; Ruby is a readable, user-friendly language with a lot of built-in functionality.  However, Ruby is actually a wrapper for a different language: **C**.  C, in turn, is a wrapper for an even lower level language called *assembly language*.  We'll get more into that in a later, optional project.  For now, what's important to know is that there several key trade-offs that are made between Ruby and C:
-
 - Ruby suffers from slower runtimes than equivalent C code, but Ruby does not need to be compiled and is extremely easy to learn and fast to write
 - Ruby offers a lot of built-in functionality on top of its data structures, whereas C operates on a "no hidden mechanism" principle -- C doesn't mask what's actually going on behind the scenes
 
@@ -84,16 +82,8 @@ Notice that now, if we were to `unshift('z')`, we have the space to do it.  We s
 
 How, specifically, would we implement such a thing?  What do we need to keep track of?  Our previous implementation of the dynamic array kept track of the length of the stored data as well as its location in memory and capacity.  Here, we need to keep track of only one more thing: the *start* location, that is, the memory location of `arr[0]`.  
 
-Spend a couple minutes brainstorming how you would implement a ring buffer's key functionality: `#find(index)`, `#unshift(item)`, `#push(item)`, and `#delete(item)`.  How would the implementation of these methods differ from the comparable methods in the dynamic array?  
-
 
 ## Time Complexity of the Built-Ins
-
-In our final section, we'll review some of the built-in array methods in Ruby that you'll find useful during interviews.  A common stumbling block in evaluating time complexity lies within these built-ins.  They can be easy to overlook and, if you haven't spent some time thinking them through, easy to forget their time complexities.  It's not strictly necessary that you use the extensive library of Ruby built-ins during an interview, but if you do, you should know the time complexity of whatever you're using.  You should also be able to explain *why* a particular time complexity is what it is.  
-
-We'll discuss the time complexity of one of the most commonly used built-ins (beyond `#[]`, `#delete`, and `#push`): `#inject`.  This will give you a template for evaluating the time complexity of other built-ins.  
-
-Recall that the `#inject` function takes in a block and an initial object, and accumulates an object to return by successively applying that block to every element in the array.  To evaluate the time complexity of `#inject`, let's think about how we would write this function by hand: we'd iterate through the array and apply the block as we go:
 
 ``` ruby
 
