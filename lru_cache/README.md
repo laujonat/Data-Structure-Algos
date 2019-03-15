@@ -239,10 +239,6 @@ So here again is a summary of how you use our hash map:
 - To **delete**, remove the node corresponding to that key from the
   linked list
 
-Finally, let's make your hash map properly enumerable. You know the
-drill. Implement `#each`, and then include the `Enumerable` module.
-Your method should yield `[key, value]` pairs.
-
 Also make sure your hash map resizes when the count exceeds the number of buckets! In order to resize properly, you
 have to double the size of the container for your buckets. Having done
 so, enumerate over each of your linked lists and re-insert their
@@ -281,7 +277,7 @@ So that's our caching strategy. But how do we actually build this thing?
 Well, an LRU cache is built using a combination of two data structures:
 a hash map, and a linked list.
 
-This is how we'll use the linked list: Each node in the list will hold a
+Linked List: Each node in the list will hold a
 cached object. We'll always add new nodes to the end of the list, so the
 nodes at the end will always be the freshest, while those at the beginning
 are the oldest. Whenever an object is requested and found in the cache,
@@ -356,20 +352,7 @@ And you did it! Congratulations!
 
 [lru-cache]: http://mcicpc.cs.atu.edu/archives/2012/mcpc2012/lru/lru.html
 
-## Phase 7: Practical Problem
-Let's now do a problem that's more similar to what you'll be seeing in 
-interviews. It might be one that you've already seen before, but the main idea
-is to try and use one of the data structures that you just built up!
-
 ### Problem
 Write a method to test whether the letters forming  a string can be 
 permuted to form a palindrome. For example, "edified" can be permute to form
 "deified". 
-
-### Approach
-You've probably realized that we should use a hash map here. Use the hash map 
-class that you implemented! This time, when you're setting and getting, picture
-in your mind what's goin on under the hood within the hashmap. 
-
-For example, whenever you set a key-value pair, picture all the specific 
-processes that's happening to the inputs.
