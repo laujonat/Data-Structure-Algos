@@ -1,6 +1,6 @@
-## Ruby Data Structures!
+## Data Structures!
 
-### Repo to reference abstract data structures written in Ruby 
+### Practice
 ```
 * Binary Trees
 * Dynamic Arrays 
